@@ -6,26 +6,24 @@ import Login from './Login'
 import AddProduct from './AddProduct'
 import Register from './Register'
 import UpdateProduct from './UpdateProduct'
+import Protected from './Protected'
 
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import Header from './Header'
 
 function App() {
   return (
     <div className="App">
       <Router>
-        <Header />
-        <h1>E-com Project</h1>
         <Route path="/login" >
           <Login />
         </Route>
 
         <Route path="/add">
-          <AddProduct />
+        <Protected Cmp={AddProduct}/>
         </Route>
         
         <Route path="/update">
-          <UpdateProduct />
+        <Protected Cmp={UpdateProduct}/>
         </Route>
         
         <Route path ="/register">
